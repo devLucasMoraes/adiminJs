@@ -24,7 +24,16 @@ const translations = {
       createFirstRecord: "Criar o primeiro registro",
       resetPassword: "Redefinir senha",
     },
-    labels,
+    labels: {
+      navigation: "Navegação",
+      pages: "Páginas",
+      selectedRecords: "Selecionados ({{selected}})",
+      filters: "Filtros",
+      adminVersion: "Admin: {{version}}",
+      appVersion: "App: {{version}}",
+      loginWelcome: "Bem vindo(a)",
+      ...labels,
+    },
     properties: {
       length: "Tamanho",
       from: "De",
