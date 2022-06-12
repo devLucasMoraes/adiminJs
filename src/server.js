@@ -1,13 +1,15 @@
 import 'dotenv/config'
 import './database'
+import express from 'express'
 
 import AdminJS from 'adminjs'
 import AdminJSExpress from '@adminjs/express'
 import AdminJSSequelize from '@adminjs/sequelize'
-import express from 'express'
 
 import UsersResource from './resources/UsersResource.js'
 
+
+import locale from './locales'
 
 AdminJS.registerAdapter(AdminJSSequelize)
 
@@ -17,7 +19,8 @@ const app = express()
 const adminJs = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UsersResource]
+    resources: [UsersResource],
+    ...locale
 })
 
 const router = AdminJSExpress.buildRouter(adminJs)
