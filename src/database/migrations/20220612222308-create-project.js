@@ -23,8 +23,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'users', key: 'id'}, // referenciando chave estranjeira
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: false
+        onDelete: 'SET NULL'
       },
       created_at: {
         allowNull: false,
