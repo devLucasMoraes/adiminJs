@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,22 +12,32 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true, // atributo unico
+        allowNull: false // atributo nao pode ser nulo
       },
       password_hash: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      role: {
+        type: Sequelize.ENUM('admin', 'manager', 'developer'), // campo de tipo STRING que so suporta valores fechados
+        allowNull: false
+      },
+      status: {
+        type: Sequelize.ENUM('active', 'archived'), // campo de tipo STRING que so suporta valores fechados
+        allowNull: false
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('users');
   }
 };
