@@ -1,10 +1,11 @@
+import { useResource } from "adminjs";
 import Sequelize from "sequelize";
 
 import config from '../config/database.js'
 
-//import Model  from "../models/";
+import User  from "../models/users";
 
-const models = [];
+const models = [User];
 
 class Database {
   constructor() {
