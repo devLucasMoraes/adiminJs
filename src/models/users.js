@@ -8,7 +8,7 @@ class User extends Model {
       initials: {
         type: Sequelize.VIRTUAL,
         get() {
-          const match = this.name.splite(" ")
+          const match = this.name.split(" ")
 
           if (match.lenght > 1) {
             return `${match[0][0]}${match[match.lenght - 1][0]}`
