@@ -6,6 +6,8 @@ npx sequelize-cli model:generate --name Users --attributes name:string,email:str
 
 npx sequelize-cli model:generate --name Project --attributes name:string,description:string,status:enum,user_id:integer
 
+npx sequelize-cli model:generate --name Task --attributes due_date:date,effort:integer,title:string,description:text,order:integer,status:enum,user_id:integer,project_id:integer
+
 
 
 --comando para conectar com o banco de dados--
