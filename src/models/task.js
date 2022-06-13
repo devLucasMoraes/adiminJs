@@ -5,20 +5,20 @@ import Sequelize, { Model } from 'sequelize';
 class Task extends Model {
   static init(sequelize) {
     super.init({
-      due_date: DataTypes.DATE,
-      effort: DataTypes.INTEGER,
-      title: DataTypes.STRING,
-      description: DataTypes.TEXT,
-      order: DataTypes.INTEGER,
-      status: DataTypes.ENUM(
+      due_date: Sequelize.DATE,
+      effort: Sequelize.INTEGER,
+      title: Sequelize.STRING,
+      description: Sequelize.TEXT,
+      order: Sequelize.INTEGER,
+      status: Sequelize.ENUM(
         'backlog',
         'doing',
         'done',
         'approved',
         'rejected'
       ),
-      user_id: DataTypes.INTEGER,
-      project_id: DataTypes.INTEGER
+      user_id: Sequelize.INTEGER,
+      project_id: Sequelize.INTEGER
     }, {
       sequelize,
       name: {
