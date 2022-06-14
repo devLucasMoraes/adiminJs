@@ -10,7 +10,13 @@ class Task extends Model {
       title: Sequelize.STRING,
       description: Sequelize.TEXT,
       order: Sequelize.INTEGER,
-      status: Sequelize.ENUM,
+      status: Sequelize.ENUM(
+        'backlog',
+        'doing',
+        'done',
+        'approved',
+        'rejected'
+      ),
       path: Sequelize.STRING,
       folder: Sequelize.STRING,
       type: Sequelize.STRING,
