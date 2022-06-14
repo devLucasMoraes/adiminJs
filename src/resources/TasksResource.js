@@ -8,17 +8,6 @@ export default {
         parent: {
             icon: 'Task'
         },
-        actions: {
-            resetPassword: {
-                actionType: 'record',
-                icon: 'Password',
-                handler: async (request, response, context) => {
-                    return {
-                        record: context.record.toJson(),
-                    };
-                },
-            },
-        },
         properties: {
             id: {
                 position: 1,
