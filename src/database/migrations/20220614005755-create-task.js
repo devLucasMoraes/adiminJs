@@ -50,7 +50,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       size: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       user_id: {
         type: Sequelize.INTEGER,
