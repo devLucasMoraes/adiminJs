@@ -9,22 +9,33 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       due_date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       effort: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       title: {
         type: Sequelize.STRING
       },
       description: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       order: {
+        defaultValue: 0,
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM(
+          'backlog',
+          'doing',
+          'done',
+          'approved',
+          'rejected'
+        ),
+        defaultValue: 'backlog',
       },
       path: {
         type: Sequelize.STRING
@@ -42,10 +53,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {model: 'users', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
       },
       project_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {model: 'projects', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,
