@@ -15,7 +15,14 @@ const Dashboard = () => {
     }, [])
 
     return(<Box>
-            <Text>Dashborad</Text>
+            <Box position="relative" overflow="hidden">
+                <Box bg="grey20" height={284} py={74} px={['defalt', 'lg', 250]}>
+                    <Text textAlign="center" color="primary100">
+                        <H2>Titulo</H2>
+                        <text opacity="0.8">Subtitulo</text>
+                    </Text>
+                </Box>
+            </Box>
         </Box>)
 }
 
