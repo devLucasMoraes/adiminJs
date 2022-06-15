@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react'
 import { ApiClient } from 'adminjs'
 import { Box, H2, Text} from '@adminjs/design-system'
 
+const api = new ApiClient()
+
 const Dashboard = () => {
     const [data, setData] = useState({})
 
