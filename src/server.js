@@ -12,6 +12,7 @@ import TasksResource from './resources/TasksResource.js'
 
 
 import locale from './locales'
+import theme from './theme.js'
 
 AdminJS.registerAdapter(AdminJSSequelize)
 
@@ -30,6 +31,7 @@ const adminJs = new AdminJS({
         logo: false,
         softwareBrothers: false,
     },
+    theme,
     ...locale
 })
 

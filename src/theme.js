@@ -1,11 +1,11 @@
 export default {
     colors: {
       // Primary
-      primary100: '#00FFFF',
-      primary80: '#33ffff',
-      primary60: '#66ffff',
-      primary40: '#99ffff',
-      primary20: '#ccffff',
+      primary100: '#ff9800',
+      primary80: '#ffa726',
+      primary60: '#ffb74d',
+      primary40: '#ffcc80',
+      primary20: '#ffe0b2',
   
       // accent
       accent: '#25BEFF',
