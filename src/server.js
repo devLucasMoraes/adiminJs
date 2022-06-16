@@ -25,6 +25,11 @@ const adminJs = new AdminJS({
         component: AdminJS.bundle('./components/Dashboard/index.jsx')
     },
     resources: [UsersResource, ProjectsResource, TasksResource],
+    branding: {
+        companyName: 'Task Manager',
+        logo: false,
+        softwareBrothers: false,
+    },
     ...locale
 })
 
