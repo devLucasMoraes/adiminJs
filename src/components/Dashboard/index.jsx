@@ -15,16 +15,39 @@ const Dashboard = () => {
         });
     }, [])
 
-    return(<Box>
-            <Box position="relative" overflow="hidden">
-                <Box bg="grey20" height={284} py={74} px={['defalt', 'lg', 250]}>
-                    <Text textAlign="center" color="primary100">
-                        <H2>{translateMessage("dashboardTitle")}</H2>
-                        <text opacity="0.8">{translateMessage("dashboardSubTitle")}</text>
-                    </Text>
-                </Box>
+    return(
+    <Box>
+        <Box position="relative" overflow="hidden">
+            <Box bg="grey20" height={284} py={74} px={['defalt', 'lg', 250]}>
+                <Text textAlign="center" color="primary100"> 
+                    <H2>{translateMessage("dashboardTitle")}</H2>
+                    <Text opacity="0.8">{translateMessage("dashboardSubTitle")}</Text>
+                </Text>
+            </Box>           
+        </Box>
+
+        <Box
+            mt={["xl", "xl", "-80px"]}
+            mb="xl"
+            mx={[0, 0, 0, "auto"]}
+            px={["default", "lg", "xxl", "0"]}
+            position="relative"
+            flex
+            flexDirection="row"
+            flexWrap="wrap"
+            width={[1, 1, 1, 1024]}>
+            <Box width={[1, 1/2, 1/2]} p="lg">
+                <Text>Chart 1</Text>
             </Box>
-        </Box>)
+            <Box width={[1, 1/2, 1/2]} p="lg">
+                <Text>Chart 2</Text>
+            </Box>
+
+        </Box>
+
+    </Box>)
+        
+    
 }
 
 export default Dashboard
