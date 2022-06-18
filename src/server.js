@@ -30,8 +30,8 @@ const adminJs = new AdminJS({
         companyName: 'Task Manager',
         logo: false,
         softwareBrothers: false,
+        theme,
     },
-    theme,
     ...locale
 })
 
