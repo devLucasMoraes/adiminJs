@@ -13,6 +13,7 @@ import TasksResource from './resources/TasksResource.js'
 import User from './models/users'
 
 import locale from './locales'
+import theme from './theme.js'
 
 
 AdminJS.registerAdapter(AdminJSSequelize)
@@ -27,6 +28,12 @@ const adminJs = new AdminJS({
         component: AdminJS.bundle('./components/Dashboard/index.jsx')
     },
     resources: [UsersResource, ProjectsResource, TasksResource],
+    branding: {
+        companyName: 'Task Manager',
+        logo: false,
+        softwareBrothers: false,
+        theme,
+    },
     ...locale
 })
 
