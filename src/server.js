@@ -10,8 +10,10 @@ import UsersResource from './resources/UsersResource.js'
 import ProjectsResource from './resources/ProjectsResource.js'
 import TasksResource from './resources/TasksResource.js'
 
+import User from './models/users'
 
 import locale from './locales'
+
 
 AdminJS.registerAdapter(AdminJSSequelize)
 
@@ -28,7 +30,18 @@ const adminJs = new AdminJS({
     ...locale
 })
 
-const router = AdminJSExpress.buildRouter(adminJs)
+//const router = AdminJSExpress.buildRouter(adminJs)
+const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
+    authenticate: async (email, password) => {
+        const user = await User.findOne({ where: { email }})
+
+        if (user && (await user.checkPassword(password)) ){
+            return user
+        }
+        return false
+    },
+    cookiePassword: process.env.SECRET,
+})
 
 app.use(adminJs.options.rootPath, router)
 app.listen(port, () => console.log(`AdminJS is under localhost:${port}/admin`))

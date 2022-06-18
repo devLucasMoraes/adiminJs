@@ -12,3 +12,7 @@ npx sequelize-cli model:generate --name Task --attributes due_date:date,effort:i
 
 --comando para conectar com o banco de dados--
 npx sequelize-cli db:migrate
+
+
+--login e permissao--
+npm i bcryptjs cookie-parser express-session
