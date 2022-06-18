@@ -31,14 +31,12 @@ class User extends Model {
         plural: 'users'
       }
     })
-
-    this.addHook(
-      ('beforeSave',
-      async (user) => {
+    this.addHook('beforeSave', async (user) => {
       if(user.password) {
         user.password_hash = await creatPasswordHash(user.password)
       }
-    }))
+    })
+ 
   }
 
   static associate(models) {

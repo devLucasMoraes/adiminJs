@@ -1,11 +1,12 @@
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 
 
 
 export const creatPasswordHash = async (password) => {
-    return bcrypt.hash(password, 8)
+    //const salt = await bcrypt.genSalt(10);
+    return bcrypt.hash(password, 12)
 }
 
-export const checkPassword = (user, password) => {
+export const checkPassword =  (user, password) => {
     return bcrypt.compare(password, user.password_hash)
 }
