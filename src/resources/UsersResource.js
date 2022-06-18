@@ -1,6 +1,7 @@
 import AdminJS from 'adminjs';
 
 import User from '../models/users';
+import { hasAdminPermission } from '../services/auth';
 
 export default {
     resource: User,
@@ -9,6 +10,9 @@ export default {
             icon: 'User'
         },
         actions: {
+            list: {
+                isAccessible: ({currentAdmin}) => hasAdminPermission(currentAdmin),
+            },
             resetPassword: {
                 actionType: 'record',
                 icon: 'Password',

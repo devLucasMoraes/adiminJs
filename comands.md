@@ -16,3 +16,7 @@ npx sequelize-cli db:migrate
 
 --login e permissao--
 npm i bcryptjs cookie-parser express-session
+
+--seed--
+npx sequelize-cli seed:generate --name creat-users
+npx sequelize-cli db:seed:all

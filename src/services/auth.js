@@ -10,3 +10,10 @@ export const creatPasswordHash = async (password) => {
 export const checkPassword =  (user, password) => {
     return bcrypt.compare(password, user.password_hash)
 }
+
+export const hasAdminPermission = (currentUser) => {
+    return currentUser && currentUser.role === "admin"
+}
+export const hasManagerPermission = (currentUser) => {
+    return currentUser && ["admin", "manager"].includes(currentUser.role)
+}
